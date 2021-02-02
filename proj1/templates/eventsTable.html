@@ -1,0 +1,37 @@
+{% extends "homepage.html" %}
+{% block title %} Events {% endblock %}
+{% block body % }
+<
+<h2>Public Events</h2>
+ {% if error %}<div class="error"><strong>Error:</strong> {{ error }}</div>{% endif %}
+
+<div class = "event">
+<ul>
+{% for Event in pevnts %}
+	<li> 
+		<h3>Event.title</h3>
+		<h4>Start time: Event.start || End time: Event.end</h4>	
+		<p>Event.desc</p>
+		<a href = "{{url_for('attend', event_id = Event.id)}}">Attend this event</a>
+	</li>
+{% endfor %}
+</ul>
+</div>
+
+{% if g.user %}
+<h2>Your Events</h2>
+<div class = "event">
+<ol>
+{% for Event in evnts %}
+	<li> 
+		<h3>Event.title</h3>
+		<h4>Start time: Event.start || End time: Event.end</h4>	
+		<p>Event.desc</p>
+		<a href = "{{url_for('cancel', event_id = Event.id)}}">Cancel this event</a>
+	</li>
+{% endfor %}
+</ol>
+</div>
+{% endblock %}
+</div>
+{% endif %}

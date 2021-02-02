@@ -1,0 +1,19 @@
+<!doctype html>
+<title>{% block title %}Welcome{% endblock %} | Event Gang </title>
+<div class="page">
+  <h1>Event Gang</h1>
+  <div class="navigation">
+  {% if g.user %}
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <a href="{{ url_for('create') }}">Create an event</a>  
+  {% else %}
+    <a href="{{ url_for('login') }}">Login</a> 
+    <a href="{{ url_for('register') }}">Register</a> 
+  {% endif %}
+  </div>
+  
+  <div>
+  {% block body %}{% endblock %}
+  </div>
+ 
+</div>

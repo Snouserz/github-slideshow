@@ -1,0 +1,27 @@
+{% extends "homepage.html" %}
+{% block title %}Event Creation{% endblock %}
+{% block body %}
+  <h2>Create Event</h2>
+  {% if error %}<div class="error"><strong>Error:</strong> {{ error }}</div>{% endif %}
+  <form action="" method="post">
+    <dl>
+      <dt>Title:
+      <dd><input type="text" name="title" size="30">
+      <dt>Description:
+      <dd><input type="text" name="description" size="30">
+      <dt>
+    </dl>
+
+    <label for="starting-time">Choose a start time for your event:</label>
+    <input type="datetime-local" id="starting-time"
+       name="starting-time" value="2020-10-01T09:00"
+       min="2020-10-01T09:00" max="2021-10-01T09:00">
+
+    <label for="ending-time">Choose an end time for your event:</label>
+    <input type="datetime-local" id="ending-time"
+       name="ending-time" value="2020-10-01T09:00"
+       min="2020-10-01T09:00" max="2021-10-01T09:00">
+
+    <div class="actions"><input type="submit" value="Create"></div>
+  </form>
+{% endblock %}

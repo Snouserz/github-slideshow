@@ -1,0 +1,14 @@
+{% extends "homepage.html" %}
+{% block title %}Event Cancellation{% endblock %}
+{% block body %}
+  <h2>Cancel Event</h2>
+  {% if error %}<div class="error"><strong>Error:</strong> {{ error }}</div>{% endif %}
+
+  <h4>Please enter 'confirm' to confirm cancellation</h4>
+
+  <input type="text" name="confirmation" size="30">
+  <div>
+  <input type="submit" value="Confirm cancellation">
+  </div>
+
+{% endblock %}
